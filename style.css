@@ -192,7 +192,7 @@ footer {
 }
 
 /* Larger Desktop Screens (Optional for larger screens) */
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .product-grid {
       grid-template-columns: repeat(4, 1fr); /* Four columns for large desktop screens */
   }
@@ -201,6 +201,7 @@ footer {
       font-size: 1.8rem;
   }
 }
+
 
 
 
