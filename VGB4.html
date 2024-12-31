@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Form</title>
+
+  <!-- Internal CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      padding: 50px;
+      background-color: darkcyan;
+      background-image: url(https://www.liveorganic.co.in/cdn/shop/collections/Fresh-Produce-1_1200x1200.jpg?v=1658572360);
+      background-size: cover;
+    }
+
+    .payment-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #error-message {
+      color: red;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="payment-container">
+    <h2>Payment Form</h2>
+    <form id="payment-form" onsubmit="return validateForm()">
+      <div class="form-group">
+        <label for="name">Name on Card</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="card-number">Card Number</label>
+        <input type="text" id="card-number" name="card-number" maxlength="16" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="expiry-date">Expiration Date</label>
+        <input type="month" id="expiry-date" name="expiry-date" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv" maxlength="3" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" name="amount" required />
+      </div>
+      
+      <button type="submit" class="submit-btn">Submit Payment</button>
+    </form>
+    <p id="error-message"></p>
+  </div>
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value;
+      const cardNumber = document.getElementById('card-number').value;
+      const expiryDate = document.getElementById('expiry-date').value;
+      const cvv = document.getElementById('cvv').value;
+      const amount = document.getElementById('amount').value;
+      const errorMessage = document.getElementById('error-message');
+      errorMessage.textContent = '';
+      if (name.trim() === '') {
+        errorMessage.textContent = 'Please enter the name on the card.';
+        return false;
+      }
+      if (cardNumber.length !== 16 || isNaN(cardNumber)) {
+        errorMessage.textContent = 'Card number should be 16 digits long.';
+        return false;
+      }
+      const expiry = new Date(expiryDate);
+      const now = new Date();
+      if (expiry < now) {
+        errorMessage.textContent = 'Expiration date must be in the future.';
+        return false;
+      }
+      if (cvv.length !== 3 || isNaN(cvv)) {
+        errorMessage.textContent = 'CVV should be 3 digits.';
+        return false;
+      }
+      if (amount <= 0) {
+        errorMessage.textContent = 'Amount should be greater than 0.';
+        return false;
+      }
+      alert('Payment successful!');
+      return true;
+    }
+  </script>
+
+</body>
+</html>
