@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Organic Farming</title>
+
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f7f6;
+      
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background-color: #ffffff;
+      background:url(https://thumbs.dreamstime.com/b/organic-farming-13736473.jpg) ;
+      padding: 50px 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-section h2 {
+      color: #2e8b57;
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-container input,
+    .contact-container textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .contact-container textarea {
+      height: 150px;
+    }
+
+    .contact-container button {
+      background-color: #2e8b57;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact-container button:hover {
+      background-color: #238a4f;
+    }
+
+    /* Error Message */
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="contact-section">
+    <h2>Contact Us - Organic Farming</h2>
+    <div class="contact-container">
+      <form id="contactForm">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p class="error" id="errorMessage">Please fill out all fields correctly.</p>
+    </div>
+  </section>
+
+  <script>
+    // JavaScript for form validation
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Clear any previous error messages
+      document.getElementById('errorMessage').style.display = 'none';
+
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+
+      // Simple validation: Check if all fields are filled
+      if (name === '' || email === '' || phone === '' || message === '') {
+        document.getElementById('errorMessage').style.display = 'block';
+        return;
+      }
+
+      // Check for valid email format
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById('errorMessage').textContent = 'Please enter a valid email address.';
+        document.getElementById('errorMessage').style.display = 'block';
+        return;
+      }
+
+      // If validation passes, simulate form submission (you can replace this with actual form submission logic)
+      alert('Thank you for contacting us! We will get back to you shortly.');
+
+      // Clear the form
+      document.getElementById('contactForm').reset();
+    });
+  </script>
+
+</body>
+</html>
