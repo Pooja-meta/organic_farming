@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organic Farming Services</title>
+
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #eef2f3;
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtuRYnllMR0iDBSmi1g4lARJUSwdkRQX4XTQ&s);
+      background-size: cover;
+     
+    }
+
+    /* Section Styling */
+    .services-section {
+      background-color: #ffffff;
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtuRYnllMR0iDBSmi1g4lARJUSwdkRQX4XTQ&s);
+      background-size: cover;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .services-section h2 {
+      color: #2e8b57;
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    /* Container for Service Cards */
+    .services-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Individual Service Card */
+    .service-card {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-card h3 {
+      color: #4CAF50;
+      font-size: 24px;
+    }
+
+    .service-card p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.5;
+      height: 80px;
+      overflow: hidden;
+    }
+
+    /* Button to Show More Details */
+    .service-card button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+
+    .service-card button:hover {
+      background-color: #388E3C;
+    }
+
+    /* Hidden extra content */
+    .extra-info {
+      display: none;
+      margin-top: 10px;
+      color: #777;
+      font-size: 14px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="services-section">
+    <h2>Our Organic Farming Services</h2>
+    <div class="services-container">
+      <!-- Service 1: Soil Health -->
+      <div class="service-card">
+        <h3>Soil Health Improvement</h3>
+        <p>We focus on enriching the soil to boost plant growth and maintain ecological balance.</p>
+        <button onclick="toggleInfo(0)">Learn More</button>
+        <div class="extra-info" id="info-0">
+          <p>Our soil health improvement practices include the use of organic compost, crop rotation, and natural fertilizers. We aim to restore soil fertility, enhance moisture retention, and promote beneficial soil organisms, ensuring long-term sustainability for your farm.</p>
+        </div>
+      </div>
+      <!-- Service 2: Crop Management -->
+      <div class="service-card">
+        <h3>Crop Management</h3>
+        <p>We guide farmers on how to manage crops using sustainable, organic methods.</p>
+        <button onclick="toggleInfo(1)">Learn More</button>
+        <div class="extra-info" id="info-1">
+          <p>Our crop management services involve selecting the right crops for the season, effective pest management using organic methods, and implementing integrated crop systems. We help increase yield while minimizing the use of synthetic chemicals, ensuring healthy and sustainable harvests.</p>
+        </div>
+      </div>
+      <!-- Service 3: Pest Control -->
+      <div class="service-card">
+        <h3>Natural Pest Control</h3>
+        <p>We help reduce pests through natural, non-toxic methods, preserving biodiversity.</p>
+        <button onclick="toggleInfo(2)">Learn More</button>
+        <div class="extra-info" id="info-2">
+          <p>Our approach to pest control involves using biological pest control agents, companion planting, and physical barriers. We avoid harmful pesticides and instead focus on nurturing the environment so that beneficial insects can thrive, thus ensuring healthy crops without harming the ecosystem.</p>
+        </div>
+      </div>
+      <!-- Service 4: Sustainability Practices -->
+      <div class="service-card">
+        <h3>Sustainability Practices</h3>
+        <p>We promote practices that support the long-term health of the land and ecosystems.</p>
+        <button onclick="toggleInfo(3)">Learn More</button>
+        <div class="extra-info" id="info-3">
+          <p>We implement sustainable farming practices like water conservation, mulching, and agroforestry. These practices help reduce environmental impact, conserve resources, and promote biodiversity, ensuring that farming can continue for generations to come.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // JavaScript to Toggle the Extra Information
+    function toggleInfo(serviceId) {
+      const infoSection = document.getElementById(`info-${serviceId}`);
+      if (infoSection.style.display === "none" || infoSection.style.display === "") {
+        infoSection.style.display = "block";
+      } else {
+        infoSection.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
