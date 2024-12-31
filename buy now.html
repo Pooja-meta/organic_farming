@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buy Now</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 1.5em;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .btn-buy-now {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        .btn-buy-now:hover {
+            background-color: #2ecc71;
+        }
+
+        .btn-buy-now:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Exclusive Product</h1>
+        <p class="product-description">This is an exclusive product with limited availability. Don't miss out on this amazing offer!</p>
+        <p class="price">$99.99</p>
+        <button class="btn-buy-now" onclick="window.location.href='https://www.example.com/checkout';">
+            Buy Now
+        </button>
+    </div>
+
+</body>
+</html>
