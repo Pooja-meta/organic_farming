@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Organic Farming</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>/* General body styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        background-image:url(https://shetishala.com/wp-content/uploads/2024/05/Blog-Banner-for-Website-Content.jpg);
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* About Us Section */
+    .about-us {
+        background-color: #eafaf1;
+        background-image:url(https://shetishala.com/wp-content/uploads/2024/05/Blog-Banner-for-Website-Content.jpg);
+        padding: 60px 0;
+        text-align: center;
+    }
+    
+    .about-us h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+        color: #2c3e50;
+    }
+    
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    /* About Us content (Mission and Vision) */
+    .content {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+    
+    .left, .right {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 45%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .left h3, .right h3 {
+        font-size: 28px;
+        color: #27ae60;
+        margin-bottom: 15px;
+    }
+    
+    .left p, .right p {
+        font-size: 16px;
+        color: #7f8c8d;
+        line-height: 1.6;
+    }
+    
+    /* Our Values section */
+    .values {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .values h3 {
+        font-size: 28px;
+        color: #27ae60;
+        margin-bottom: 20px;
+    }
+    
+    .values ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .values li {
+        font-size: 16px;
+        color: #7f8c8d;
+        margin: 10px 0;
+    }
+    
+    .values strong {
+        color: #2c3e50;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .content {
+            flex-direction: column;
+            gap: 20px;
+        }
+    
+        .left, .right {
+            width: 100%;
+        }
+    }
+    </style>
+<body>
+    <section class="about-us" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="content">
+                <div class="left">
+                    <h3>Our Mission</h3>
+                    <img src="https://khetigaadi.com/blog/wp-content/uploads/2024/10/Transforming-Indian-agriculture-1.jpg" width="200" height="100">
+                    <p>We are committed to providing the highest quality organic produce while protecting the environment and supporting sustainable farming practices. Our mission is to grow food that nourishes both the body and the planet.</p>
+                </div>
+                <div class="right">
+                    <h3>Our Vision</h3>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoSjsZ-KAxERFohX64yz4v7ca8-9KRqOne6w&s" width="200" height="100">
+                    <p>We envision a world where organic farming becomes the standard, where all food is produced sustainably, and where every person can access nutritious, clean food grown with care for the Earth.</p>
+                </div>
+            </div>
+            <div class="values">
+                <h3>Our Values</h3>
+                <img src="https://www.goodharvest.com.au/cdn/shop/articles/Our_Core_Values.png?v=1676324784" width="250" height="100">
+                <ul>
+                    <li><strong>Sustainability:</strong> We are dedicated to sustainable farming practices that protect the soil, water, and air.</li>
+                    <li><strong>Integrity:</strong> We operate with transparency and fairness in every step of our farming process.</li>
+                    <li><strong>Health:</strong> We prioritize the health of our customers and the planet by avoiding harmful pesticides and chemicals.</li>
+                    <li><strong>Community:</strong> We support local communities by providing access to organic food and creating jobs through sustainable farming.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js">window.onload = function() {
+        const aboutSection = document.querySelector('.about-us');
+        aboutSection.style.opacity = 0;
+        aboutSection.style.transition = 'opacity 1s';
+        
+        setTimeout(function() {
+            aboutSection.style.opacity = 1;
+        }, 500);
+    };
+    </script>
+</body>
+</html>
