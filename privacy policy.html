@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Organic Farming</title>
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20241217/pngtree-people-exploring-a-local-farm-market-for-organic-products-image_16814192.jpg);
+            background-size: cover;
+        }
+        header {
+            background-color: #fff9f0;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            
+        }
+        section {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: white;
+          
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .hide-more {
+            display: none;
+            margin-top: 15px;
+            background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20241217/pngtree-people-exploring-a-local-farm-market-for-organic-products-image_16814192.jpg);
+            background-size: cover;
+        }
+        .read-more-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .read-more-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Privacy Policy - Organic Farming</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>Welcome to our Organic Farming website. Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal information as part of our efforts to provide sustainable and eco-friendly farming solutions.</p>
+
+        <h2>Information We Collect</h2>
+        <p>When you interact with our website, we may collect personal information, including your name, email address, phone number, and location. This data helps us manage orders, inquiries, and farm updates efficiently.</p>
+
+        <h2>How We Use Your Information</h2>
+        <p>We use the information you provide for the following purposes:</p>
+        <ul>
+            <li>To process your orders for organic produce or farming products.</li>
+            <li>To send you updates about our farm, seasonal produce, and special promotions.</li>
+            <li>To respond to your inquiries and provide customer support.</li>
+        </ul>
+
+        <h2>Data Protection</h2>
+        <p>We are committed to safeguarding your personal information. We implement security measures to protect against unauthorized access, alteration, or destruction of your data. However, no method of data transmission over the Internet is completely secure.</p>
+
+        <!-- Hidden section for additional privacy policy details -->
+        <div class="hide-more" id="moreInfo">
+            <h2>Third-Party Sharing</h2>
+            <p>We do not share your personal information with third parties unless necessary for the operation of our services (e.g., payment processors) or if required by law.</p>
+
+            <h2>Cookies</h2>
+            <p>We use cookies to enhance your experience on our site. Cookies allow us to remember your preferences and improve the functionality of our website, such as remembering your cart items or location for farm pickup.</p>
+
+            <h2>Your Rights</h2>
+            <p>You have the right to access, update, or delete your personal information at any time. You can also opt-out of receiving promotional emails by following the unsubscribe link at the bottom of each email.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have any questions or concerns about our privacy practices, please contact us at <strong>privacy@organicfarm.com</strong> or through our website's contact form.</p>
+        </div>
+
+        <!-- Button to toggle visibility of additional information -->
+        <button class="read-more-btn" onclick="toggleMoreInfo()">Read More</button>
+    </section>
+
+    <script>
+        // JavaScript to show/hide additional information
+        function toggleMoreInfo() {
+            var moreInfo = document.getElementById("moreInfo");
+            var btn = document.querySelector(".read-more-btn");
+            if (moreInfo.style.display === "none" || moreInfo.style.display === "") {
+                moreInfo.style.display = "block";
+                btn.innerText = "Read Less";
+            } else {
+                moreInfo.style.display = "none";
+                btn.innerText = "Read More";
+            }
+        }
+    </script>
+    
+</body>
+</html>
