@@ -1,156 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-    /* General reset for margin, padding, and box-sizing */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    background-image: url(https://www.dahu.bio/images/photos/agriculture/organic-product.jpg);
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Container to center the form */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-/* Form styling */
-.form-container {
-    background-color: #83a720;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    text-align: center;
-}
-
-/* Heading styling */
-h2 {
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 24px;
-}
-
-/* Input field group */
-.input-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-/* Labels for input fields */
-label {
-    display: block;
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 8px;
-}
-
-/* Input field styling */
-input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-/* Button styling */
-button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-/* Signup link styling */
-.signup-link {
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-.signup-link a {
-    text-decoration: none;
-    color: #4CAF50;
-}
-
-.signup-link a:hover {
-    text-decoration: underline;
-}
-
-</style>
-<body>
-  <div class="container">
-    <div class="form-container">
-      <h2>Sign In</h2>
-      <form action="#" method="POST">
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="Enter your email">
-        </div>
-
-        <div class="input-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required placeholder="Enter your password">
-        </div>
-
-        <button type="submit" class="submit-btn">Sign In</button>
-        
-        <p class="signup-link">Don't have an account? <a href="sing up.html">Sign up</a></p>
-      </form>
-    </div>
-  </div>
-  <script>
-    // Login form submission
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent default form submission
-        
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-
-        // Get stored user data from local storage
-        const storedUser = JSON.parse(localStorage.getItem('user'));
-
-        if (storedUser) {
-            // Check if email and password match
-            if (storedUser.email === email && storedUser.password === password) {
-                alert('Login successful!');
-                window.location.href = 'https://github.com/Pooja-meta/organic_farming/blob/main/index.html';  // Redirect to the home page or dashboard
-            } else {
-                alert('Invalid email or password!');
-            }
-        } else {
-            alert('No account found. Please sign up.');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ORGANIC FARMING</title>
+    <link href="https://www.shutterstock.com/image-vector/farm-fresh-vector-emblems-stickers-260nw-1430364395.jpg" rel="stylesheet">
+    <style>
+        /* Reset margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    });
-</script>
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #b9b9b9, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            overflow: hidden;
+            animation: backgroundAnimation 10s infinite;
+            position: relative;
+        }
+
+        /* Add logo image as background */
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(https://www.dahu.bio/images/photos/agriculture/organic-product.jpg);
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+            z-index: -1; /* Keep the background behind the content */
+        }
+
+        /* Background animation */
+        @keyframes backgroundAnimation {
+            0% {
+                background: linear-gradient(45deg, #dbdbdb, #2575fc);
+            }
+
+            50% {
+                background: linear-gradient(45deg, #2575fc, #cacaca);
+            }
+
+            100% {
+                background: linear-gradient(45deg, #f3f3f3, #2575fc);
+            }
+        }
+
+        /* Main login container */
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo styling */
+        .logo h1 {
+            font-size: 3rem;
+            color: #066938;
+            margin-bottom: 20px;
+            font-weight: 600;
+            animation: bounce 1s infinite alternate;
+        }
+
+        /* Bounce effect for the logo */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .logo img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            
+        }
+
+        /* Spin animation for logo */
+        @keyframes logoSpin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Input fields styling */
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 2px solid #06611d;
+            font-size: 1rem;
+            outline: none;
+            background-color: #f4f4f4;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Focus effect on input fields */
+        .input-field:focus {
+            border-color: #5d9e85;
+            background-color: #e8f3fe;
+            box-shadow: 0 0 5px rgba(4, 119, 56, 0.7);
+        }
+
+        /* Submit button styling */
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #056422;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            margin-bottom: 15px; /* Add space between the buttons */
+        }
+
+        /* Submit button hover effect */
+        .submit-btn:hover {
+            background-color: #6b3535;
+            transform: scale(1.05);
+        }
+
+        /* Back button styling */
+        .back-btn {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #0b6430;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #067534;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+            display: inline-block;
+            margin-bottom: 10px; /* Add margin below the back button */
+        }
+
+        /* Back button hover effect */
+        .back-btn:hover {
+            background-color: #076426;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Forgot password link */
+        .forgot-password {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #04612e;
+            text-decoration: none;
+            transition: 0.3s ease-in-out;
+            display: inline-block;
+            margin-bottom: 10px; /* Add margin below the forgot password link */
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        /* Error message styling */
+        .error-message {
+            color: #ff4d4d;
+            font-size: 1rem;
+            margin-top: 20px;
+            display: none; /* Hidden by default */
+        }
+
+        /* Shake animation for error message */
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            75% {
+                transform: translateX(-5px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Show the error message with shake effect */
+        .error-message.show {
+            display: block;
+            animation: shake 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <div class="logo">
+            <img src="https://www.shutterstock.com/image-vector/farm-fresh-vector-emblems-stickers-260nw-1430364395.jpg" alt="Logo">
+            <h1>ORGANIC FARMING</h1>
+        </div>
+
+        <form id="loginForm" onsubmit="return validateLogin(event)">
+            <input type="email" class="input-field" placeholder="Email" id="email" required>
+            <input type="password" class="input-field" placeholder="Password" id="password" required>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+
+        <!-- Back button -->
+        <a href="index.html" class="back-btn">Back to Home</a>
+
+        <!-- Forgot password link -->
+        <a href="#" class="forgot-password">Forgot Password?</a>
+        <br>
+        <a href="sing up.html" class="forgot-password">Create Account</a>
+
+        <!-- Error message section -->
+        <div class="error-message" id="error-message">
+            Invalid email or password. Please try again.
+        </div>
+    </div>
+
+    <script>
+        // Login form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Get stored user data from local storage
+            const storedUser = JSON.parse(localStorage.getItem('user'));
+
+            if (storedUser) {
+                // Check if email and password match
+                if (storedUser.email === email && storedUser.password === password) {
+                    alert('Login successful!');
+                    window.location.href = 'homepg.html';  // Redirect to the home page or dashboard
+                } else {
+                    alert('Invalid email or password!');
+                }
+            } else {
+                alert('No account found. Please sign up.');
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
