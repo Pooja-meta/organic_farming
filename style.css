@@ -31,12 +31,11 @@ nav {
 }
 
 nav .logo h1 {
-  font-size: 2rem;
+  font-size: 1.5rem; /* Slightly smaller on mobile */
 }
 
 nav .nav-links {
-  display: flex;
-  gap: 1rem;
+  display: none; /* Hide nav links by default on mobile */
 }
 
 nav .nav-links li {
@@ -72,7 +71,7 @@ nav .sign-in {
 }
 
 #home .hero h2 {
-  font-size: 3rem;
+  font-size: 2.5rem; /* Smaller on mobile */
   margin-bottom: 1rem;
 }
 
@@ -85,6 +84,7 @@ nav .sign-in {
   padding: 2rem 1rem;
   background-image: url(https://miro.medium.com/max/3840/1*6rNJiUvrbLlM4xHJaJr06A.png);
   background-position: fixed;
+  background-size: cover;
 }
 
 /* Shop Section */
@@ -95,7 +95,7 @@ nav .sign-in {
 
 .product-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Mobile-first: Single column */
+  grid-template-columns: 1fr; /* Single column for mobile-first */
   gap: 2rem;
 }
 
@@ -115,12 +115,12 @@ nav .sign-in {
 }
 
 .product-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem; /* Slightly smaller on mobile */
   margin: 1rem 0;
 }
 
 .product-card p {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Slightly smaller on mobile */
   color: #333;
 }
 
@@ -146,61 +146,66 @@ footer {
   margin-top: 2rem;
 }
 
-/* Media Queries for Responsiveness */
+/* Media Queries for Larger Screens */
 
 /* Tablets and up */
 @media (min-width: 600px) {
   nav .nav-links {
-      display: flex;
-      justify-content: space-between; /* Adjusts nav links */
+    display: flex; /* Show nav links on tablets */
+    gap: 1rem;
+  }
+
+  nav .logo h1 {
+    font-size: 2rem; /* Adjust logo size on tablets */
   }
 
   .product-grid {
-      grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+    grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
   }
 
   .product-card {
-      padding: 1rem;
+    padding: 1rem;
   }
 
   #home .hero h2 {
-      font-size: 2.5rem;
+    font-size: 2.8rem; /* Larger hero text */
   }
 }
 
 /* Desktop and up */
 @media (min-width: 1024px) {
   nav {
-      flex-wrap: nowrap;
+    flex-wrap: nowrap;
   }
 
   nav .nav-links {
-      gap: 2rem;
+    gap: 2rem;
   }
 
   .product-grid {
-      grid-template-columns: repeat(3, 1fr); /* Three columns for desktops */
+    grid-template-columns: repeat(3, 1fr); /* Three columns on desktops */
   }
 
   .product-card {
-      padding: 1.5rem;
+    padding: 1.5rem;
   }
 
   #home .hero h2 {
-      font-size: 3rem;
+    font-size: 3rem; /* Larger hero text */
   }
 }
 
-/* Larger Desktop Screens (Optional for larger screens) */
+/* Larger Desktop Screens */
 @media (min-width: 1200px) {
   .product-grid {
-      grid-template-columns: repeat(4, 1fr); /* Four columns for large desktop screens */
+    grid-template-columns: repeat(4, 1fr); /* Four columns for larger desktop screens */
   }
 
   .product-card h3 {
-      font-size: 1.8rem;
+    font-size: 1.8rem; /* Larger font for product titles */
   }
 }
+
 
 
 
