@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Floating Boxes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Indie Flower', cursive; /* Apply Indie Flower font */
+            background-color: #ffebee; /* Light pinkish peach background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Heading Style */
+        h1 {
+            font-size: 36px;
+            color: #ff7043; /* Pinkish Peach color for the heading */
+            margin-top: 50px;
+        }
+
+        /* Container for Floating Boxes */
+        .float-box-container {
+            display: flex;
+            flex-wrap: nowrap; /* Keep boxes in a row initially */
+            overflow-x: auto; /* Enable horizontal scroll */
+            width: 90vw; /* Set the width for the scrolling area */
+            margin-top: 30px;
+            padding-bottom: 20px; /* Space for scroll button */
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+
+        /* Floating Box Style */
+        .float-box {
+            width: 400px;  /* Increased box size */
+            height: 400px; /* Increased box size */
+            padding: 20px;
+            background-color: #ffccbc; /* Light peachish background for the box */
+            border: 3px solid #ff7043; /* Border in a pinkish peach color */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            margin-right: 20px; /* Space between boxes */
+            text-align: center;
+        }
+
+        .float-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px; /* Round corners for the image */
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1200px) {
+            .float-box-container {
+                width: 80vw; /* Adjust container width for medium-sized screens */
+            }
+            .float-box {
+                width: 350px; /* Slightly smaller boxes */
+                height: 350px; /* Maintain aspect ratio */
+            }
+        }
+
+        @media (max-width: 900px) {
+            .float-box-container {
+                width: 100vw; /* Use full screen width for smaller devices */
+            }
+            .float-box {
+                width: 300px; /* Smaller boxes */
+                height: 300px; /* Maintain aspect ratio */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .float-box-container {
+                width: 100vw; /* Use full screen width */
+                flex-direction: column; /* Change to vertical stacking of boxes */
+                align-items: center; /* Center-align the boxes */
+                padding-bottom: 10px; /* Adjust spacing */
+            }
+            .float-box {
+                width: 250px; /* Even smaller boxes */
+                height: 250px; /* Maintain aspect ratio */
+                margin-right: 0; /* No right margin for vertical stacking */
+                margin-bottom: 20px; /* Space between boxes */
+            }
+            h1 {
+                font-size: 28px; /* Smaller heading font */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to the Floating Boxes Page!</h1>
+
+    <!-- Container for all Floating Boxes -->
+    <div class="float-box-container">
+        <!-- Main Floating Box with Image -->
+        <div class="float-box">
+            <img src="https://via.placeholder.com/400" alt="Main Image">
+        </div>
+
+        <!-- Additional Floating Boxes -->
+        <div class="float-box">
+            <img src="https://via.placeholder.com/400/ffccbc" alt="Box 2">
+        </div>
+        <div class="float-box">
+            <img src="https://via.placeholder.com/400/ff7043" alt="Box 3">
+        </div>
+        <div class="float-box">
+            <img src="https://via.placeholder.com/400/ffb6b9" alt="Box 4">
+        </div>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Floating Boxes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Indie Flower', cursive; /* Apply Indie Flower font */
+            background-color: #ffebee; /* Light pinkish peach background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Heading Style */
+        h1 {
+            font-size: 36px;
+            color: #ff7043; /* Pinkish Peach color for the heading */
+            margin-top: 50px;
+        }
+
+        /* Container for Floating Boxes */
+        .float-box-container {
+            display: flex;
+            flex-wrap: nowrap; /* Keep boxes in a row initially */
+            overflow-x: auto; /* Enable horizontal scroll */
+            width: 90vw; /* Set the width for the scrolling area */
+            margin-top: 30px;
+            padding-bottom: 20px; /* Space for scroll button */
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+
+        /* Floating Box Style */
+        .float-box {
+            width: 400px;  /* Increased box size */
+            height: 400px; /* Increased box size */
+            padding: 20px;
+            background-color: #ffccbc; /* Light peachish background for the box */
+            border: 3px solid #ff7043; /* Border in a pinkish peach color */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            margin-right: 20px; /* Space between boxes */
+            text-align: center;
+        }
+
+        .float-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px; /* Round corners for the image */
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1200px) {
+            .float-box-container {
+                width: 80vw; /* Adjust container width for medium-sized screens */
+            }
+            .float-box {
+                width: 350px; /* Slightly smaller boxes */
+                height: 350px; /* Maintain aspect ratio */
+            }
+        }
+
+        @media (max-width: 900px) {
+            .float-box-container {
+                width: 100vw; /* Use full screen width for smaller devices */
+            }
+            .float-box {
+                width: 300px; /* Smaller boxes */
+                height: 300px; /* Maintain aspect ratio */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .float-box-container {
+                width: 100vw; /* Use full screen width */
+                flex-direction: column; /* Change to vertical stacking of boxes */
+                align-items: center; /* Center-align the boxes */
+                padding-bottom: 10px; /* Adjust spacing */
+            }
+            .float-box {
+                width: 250px; /* Even smaller boxes */
+                height: 250px; /* Maintain aspect ratio */
+                margin-right: 0; /* No right margin for vertical stacking */
+                margin-bottom: 20px; /* Space between boxes */
+            }
+            h1 {
+                font-size: 28px; /* Smaller heading font */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to the Floating Boxes Page!</h1>
+
+    <!-- Container for all Floating Boxes -->
+    <div class="float-box-container">
+        <!-- Main Floating Box with Image -->
+        <div class="float-box">
+            <img src="https://via.placeholder.com/400" alt="Main Image">
+        </div>
+
+        <!-- Additional Floating Boxes -->
+        <div class="float-box">
+            <img src="https://via.placeholder.com/400/ffccbc" alt="Box 2">
+        </div>
+        <div class="float-box">
+            <img src="https://via.placeholder.com/400/ff7043" alt="Box 3">
+        </div>
+        <div class="float-box">
+            <img src="https://via.placeholder.com/400/ffb6b9" alt="Box 4">
+        </div>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Floating Boxes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Indie Flower', cursive; /* Apply Indie Flower font */
+            background-color: #ffebee; /* Light pinkish peach background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Heading Style */
+        h1 {
+            font-size: 36px;
+            color: #ff7043; /* Pinkish Peach color for the heading */
+            margin-top: 50px;
+        }
+
+        /* Container for Floating Boxes */
+        .float-box-container {
+            display: flex;
+            flex-wrap: nowrap; /* Keep boxes in a row initially */
+            overflow-x: auto; /* Enable horizontal scroll */
+            width: 90vw; /* Set the width for the scrolling area */
+            margin-top: 30px;
+            padding-bottom: 20px; /* Space for scroll button */
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+
+        /* Floating Box Style */
+        .float-box {
+            width: 400px;  /* Increased box size */
+            height: 400px; /* Increased box size */
+            padding: 20px;
+            background-color: #ffccbc; /* Light peachish background for the box */
+            border: 3px solid #ff7043; /* Border in a pinkish peach color */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            margin-right: 20px; /* Space between boxes */
+            text-align: center;
+        }
+
+        .float-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px; /* Round corners for the image */
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1200px) {
+            .float-box-container {
+                width: 80vw; /* Adjust container width for medium-sized screens */
+            }
+            .float-box {
+                width: 350px; /* Slightly smaller boxes */
+                height: 350px; /* Maintain aspect ratio */
+            }
+        }
+
+        @media (max-width: 900px) {
+            .float-box-container {
+                width: 100vw; /* Use full screen width for smaller devices */
+            }
+            .float-box {
+                width: 300px; /* Smaller boxes */
+                height: 300px; /* Maintain aspect ratio */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .float-box-container {
+                width: 100vw; /* Use full screen width */
+                flex-direction: column; /* Change to vertical stacking of boxes */
+                align-items: center; /* Center-align the boxes */
+                padding-bottom: 10px; /* Adjust spacing */
+            }
+            .float-box {
+                width: 250px; /* Even smaller boxes */
+                height: 250px; /* Maintain aspect ratio */
+                margin-right: 0; /* No right margin for vertical stacking */
+                margin-bottom: 20px; /* Space between boxes */
+            }
+            h1 {
+                font-size: 28px; /* Smaller heading font */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to the Floating Boxes Page!</h1>
+
+    <!-- Container for all Floating Boxes -->
+    <div class="float-box-container">
+        <!-- Main Floating Box with Image -->
+        <div class="float-box">
+            <img src="https://via.placeholder.com/400" alt="Main Image">
+        </div>
+
+        <!-- Additional Floating Boxes -->
+        <div class="float-box">
+            <img src="https://via.placeholder.com/400/ffccbc" alt="Box 2">
+        </div>
+        <div class="float-box">
+            <img src="https://via.placeholder.com/400/ff7043" alt="Box 3">
+        </div>
+        <div class="float-box">
+            <img src="https://via.placeholder.com/400/ffb6b9" alt="Box 4">
+        </div>
+    </div>
+
+</body>
+</html>
